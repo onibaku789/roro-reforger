@@ -6,8 +6,8 @@ import hu.blszk.model.stat.StatType;
 import java.util.Objects;
 
 public class PrimaryStat implements Stat {
+    private final double value;
     private final StatType statType;
-    private double value;
 
     public PrimaryStat(double value, StatType statType) {
         this.value = value;
@@ -48,4 +48,14 @@ public class PrimaryStat implements Stat {
     public int hashCode() {
         return Objects.hash(statType, value);
     }
+
+    public double value() {
+        return value;
+    }
+
+    public StatType statType() {
+        return statType;
+    }
+
+
 }

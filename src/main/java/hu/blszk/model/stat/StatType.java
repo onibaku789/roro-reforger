@@ -1,6 +1,6 @@
 package hu.blszk.model.stat;
 
-import java.util.stream.Stream;
+import java.util.List;
 
 public enum StatType {
     CriticalStrike,
@@ -11,16 +11,19 @@ public enum StatType {
     Agility,
     Stamina,
     Strength,
-    Intelligence;
-    // TODO: 8/2/2021 missing stats
-    private static final Stream<StatType> primaryStats = Stream.of(Agility, Strength, Stamina, Intelligence);
-    private static final Stream<StatType> secondaryStats = Stream.of(CriticalStrike, Mastery, Haste, Hit, Expertise);
+    Intelligence,
+    Spirit,
+    Dodge,
+    Parry;
+
+    private static final List<StatType> secondaryStats = List.of(Spirit, CriticalStrike, Mastery, Haste, Hit, Expertise, Dodge, Parry);
+    private static final List<StatType> primaryStats = List.of(Agility, Strength, Stamina, Intelligence);
 
     public boolean isSecondary() {
-        return secondaryStats.anyMatch(statType -> statType.equals(this));
+        return secondaryStats.contains(this);
     }
 
     public boolean isPrimary() {
-        return primaryStats.anyMatch(statType -> statType.equals(this));
+        return primaryStats.contains(this);
     }
 }

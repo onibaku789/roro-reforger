@@ -5,13 +5,12 @@ import hu.blszk.model.stat.secondary.SecondaryStat;
 
 public class StatFactory {
 
-    public Stat createStat(Long value, String statTypeString) {
-        StatType statType = StatType.valueOf(statTypeString);
+    public Stat createStat(double value, StatType statType) {
         if (statType.isPrimary()) {
             return new PrimaryStat(value, statType);
         } else if (statType.isSecondary()) {
             return new SecondaryStat(value, statType);
         }
-        throw new RuntimeException("No stat exists: " + statTypeString);
+        throw new RuntimeException("No stat exists: " + statType);
     }
 }

@@ -7,7 +7,7 @@ import hu.blszk.model.stat.secondary.SecondaryStat;
 import java.util.List;
 import java.util.Objects;
 
-public final class Gear {
+public class Gear {
     private final List<PrimaryStat> primaryStats;
     private final List<SecondaryStat> secondaryStats;
     private final String name;
