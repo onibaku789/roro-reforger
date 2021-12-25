@@ -5,9 +5,9 @@ import hu.blszk.model.stat.StatType;
 
 import java.util.Objects;
 
-public class SecondaryStat implements Stat {
+public final class SecondaryStat implements Stat {
+    private final double value;
     private final StatType statType;
-    private double value;
 
     public SecondaryStat(double value, StatType statType) {
         this.value = value;
@@ -24,9 +24,10 @@ public class SecondaryStat implements Stat {
         return statType;
     }
 
+
     @Override
-    public void changeValue(double value) {
-        this.value = value;
+    public boolean isStatThisType(StatType statType) {
+        return this.statType.equals(statType);
     }
 
     @Override
@@ -48,4 +49,13 @@ public class SecondaryStat implements Stat {
     public int hashCode() {
         return Objects.hash(statType, value);
     }
+
+    public double value() {
+        return value;
+    }
+
+    public StatType statType() {
+        return statType;
+    }
+
 }

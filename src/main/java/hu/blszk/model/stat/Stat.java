@@ -5,5 +5,5 @@ public interface Stat {
 
     StatType getStatType();
 
-    void changeValue(double value);
+    boolean isStatThisType(StatType statType);
 }

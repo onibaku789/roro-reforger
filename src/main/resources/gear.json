@@ -1,0 +1,5 @@
+{
+  "name": "Roro XD",
+  "primaryStats": [{"value": 100.0,"statType": "Agility"}],
+  "secondaryStats": [{"value": 100.0,"statType": "CriticalStrike"},{"value": 100.0,"statType": "CriticalStrike"},{"value": 100.0,"statType": "CriticalStrike"}]
+}

@@ -1,4 +1,8 @@
 package hu.blszk.model;
 
-public class Player {
+import hu.blszk.model.gear.Gear;
+
+import java.util.List;
+
+public record Player(List<Gear> gearList) {
 }

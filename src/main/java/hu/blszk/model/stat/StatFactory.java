@@ -11,6 +11,6 @@ public class StatFactory {
         } else if (statType.isSecondary()) {
             return new SecondaryStat(value, statType);
         }
-        throw new RuntimeException("No stat exists: " + statType);
+        throw new RuntimeException("Stat doesn't exist " + statType);
     }
 }

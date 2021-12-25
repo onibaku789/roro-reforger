@@ -53,7 +53,7 @@ class GearTest {
         underTest = new Gear("test", null, stats);
         Optional<Double> reforgedFrom = getValueWithType(from);
         //WHEN
-        underTest.reforge(from, to);
+        underTest = underTest.reforge(from, to);
         Optional<Double> actualFrom = getValueWithType(from);
         Optional<Double> actualTo = getValueWithType(to);
         //THEN

@@ -5,7 +5,7 @@ import hu.blszk.model.stat.StatType;
 
 import java.util.Objects;
 
-public class PrimaryStat implements Stat {
+public final class PrimaryStat implements Stat {
     private final double value;
     private final StatType statType;
 
@@ -25,8 +25,8 @@ public class PrimaryStat implements Stat {
     }
 
     @Override
-    public void changeValue(double value) {
-        throw new UnsupportedOperationException();
+    public boolean isStatThisType(StatType statType) {
+        return false;
     }
 
     @Override
