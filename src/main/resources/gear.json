@@ -1,5 +1,12 @@
-{
+[
+  {
   "name": "Roro XD",
-  "primaryStats": [{"value": 100.0,"statType": "Agility"}],
-  "secondaryStats": [{"value": 100.0,"statType": "CriticalStrike"},{"value": 100.0,"statType": "CriticalStrike"},{"value": 100.0,"statType": "CriticalStrike"}]
-}
+  "primaryStats": [{"value": 100.0,"statType": "Agility"},{"value": 100.0,"statType": "Stamina"}],
+  "secondaryStats": [{"value": 100.0,"statType": "Mastery"}, {"value": 100.0,"statType": "CriticalStrike"}]
+},
+  {
+    "name": "nem roro",
+    "primaryStats": [{"value": 100.0,"statType": "Agility"}],
+    "secondaryStats": [{"value": 100.0,"statType": "Haste"}, {"value": 100.0,"statType": "Mastery"}]
+  }
+]

@@ -26,4 +26,12 @@ public enum StatType {
     public boolean isPrimary() {
         return primaryStats.contains(this);
     }
+
+    public static List<StatType> getPrimaryStats() {
+        return primaryStats;
+    }
+
+    public static List<StatType> getSecondaryStats() {
+        return List.of(CriticalStrike, Mastery, Haste, Hit, Expertise);
+    }
 }
