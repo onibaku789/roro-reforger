@@ -8,6 +8,7 @@ import hu.blszk.model.stat.secondary.SecondaryStat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -21,7 +22,11 @@ public class Main {
         Instant start = Instant.now();
         for (Gear gear : toon) {
             List<SecondaryStat> secondaryStats = gear.getSecondaryStats();
-            List<StatType> statsToReforge = StatType.getSecondaryStats().stream().filter(statType -> secondaryStats.stream().map(SecondaryStat::statType).noneMatch(statType1 -> statType1.equals(statType))).toList();
+            List<StatType> statsToReforge = StatType.getSecondaryStats().stream()
+                    .filter(statType -> secondaryStats.stream()
+                            .map(SecondaryStat::statType)
+                            .noneMatch(statType1 -> statType1.equals(statType)))
+                    .toList();
 
             List<Gear> gears = new ArrayList<>();
             gears.add(gear);
@@ -35,31 +40,29 @@ public class Main {
         }
 
 
-        nemtom(new ArrayList<>(), 0);
+        nemtom(new LinkedList<>(), lists.size() - 1);
         Instant finish = Instant.now();
 
         for (List<Gear> state : states) {
             System.out.println(state);
-            System.out.println("\n");
         }
 
         System.out.println("execute time: " + Duration.between(start, finish).toMillis());
     }
 
     public static void nemtom(List<Gear> currentGear, int counter) {
-        List<Gear> gears = new ArrayList<>(lists.get(counter));
-        int size = gears.size();
-        for (int i = 0; i < size; i++) {
-            List<Gear> nemtom2323 = new ArrayList<>();
-            nemtom2323.add(gears.remove(0));
-            nemtom2323.addAll(currentGear);
-            if (lists.size() - 1 <= counter) {
-                states.add(nemtom2323);
+        List<Gear> gears = lists.get(counter);
+        for (int i = 0, gearsSize = gears.size(); i < gearsSize; i++) {
+            Gear gear = gears.get(i);
+            List<Gear> newGear = new LinkedList<>(currentGear);
+            newGear.add(gear);
+            System.out.println("counter = " + counter + ", i: " + i);
+            if (counter <= 0) {
+                states.add(newGear);
             } else {
-                nemtom(nemtom2323, counter + 1);
+                nemtom(newGear, counter - 1);
             }
         }
     }
-
 
 }
